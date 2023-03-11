@@ -1,12 +1,23 @@
-#from pytube import YouTube
-#from pytube.cli import on_progress #this module contains the built in progress bar.
+import threading
 from YoutubeVideo import YoutubeVideo
+from pytube import YouTube
+from time import sleep
+import os
 
-video = YoutubeVideo(url="https://www.youtube.com/watch?v=LXb3EKWsInQ")
+video = YoutubeVideo(url="https://www.youtube.com/watch?v=kRxPpl_85gc", path="/var/www/html/downloads")
+#video.print_all_codecs()
+video.download_video_and_audio()
+#print(video.get_itag_default_stream())
 
 
-video.download_stream(699, "kek.mp4")
+#print(os.path.join("/home/alexex/Down", f"file.txt"))
 
+
+#yt = YouTube(url="https://www.youtube.com/watch?v=kRxPpl_85gc")
+#s = yt.streams.get_by_itag(22).mime_type
+#print(s.replace("audio/", "").replace("video/", ""))
+
+#video.print_all_codecs()
 
 
 #yt = YouTube("https://www.youtube.com/watch?v=LXb3EKWsInQ")
